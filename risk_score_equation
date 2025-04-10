@@ -1,0 +1,4 @@
+Risk score = a (Number of Crashes) + b (Number of rain / snow crashes) (Current weather)
+
+a & b are parameters to be learned
+if current weather has rain/snow - current weather = 1, else current weather = 0
