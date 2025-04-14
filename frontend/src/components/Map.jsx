@@ -6,9 +6,11 @@ const Map = () => {
     const [mapHTML, setMapHTML] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/map')
+        axios.get('https://your-backend-service-name.onrender.com/map')
             .then((response) => setMapHTML(response.data))
-    }, [])
+            .catch((error) => console.error('Error fetching map:', error));
+    }, []);
+
 
     return <div dangerouslySetInnerHTML={{ __html: mapHTML }} />
 }
