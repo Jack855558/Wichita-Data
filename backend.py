@@ -1,13 +1,17 @@
 import pandas as pd
 import geopandas as gpd
 import numpy as np
+import os
 from flask import Flask, Response
 from flask_cors import CORS
 import folium
 
 
 app = Flask(__name__)
-CORS(app, origins="http://localhost:3000") #Allow frontend requeset
+
+# Enable CORS for  '*' - all routes
+CORS(app, origins=os.getenv('FRONTEND_URL', '*'))  
+
 
 @app.route('/map')
 def get_map(): 
@@ -24,5 +28,4 @@ def get_map():
     return Response(map_html, mimetype='text/html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(debug=False, host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
