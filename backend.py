@@ -5,6 +5,10 @@ import os
 from flask import Flask, Response
 from flask_cors import CORS
 import folium
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 app = Flask(__name__)
