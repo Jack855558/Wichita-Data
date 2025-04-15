@@ -14,7 +14,7 @@ const Map = () => {
     console.log('Axios default base URL:', axios.defaults.baseURL);
 
     useEffect(() => {
-        axios.get('https://Wichita-Data-1.onrender.com/test')
+        axios.get('https://wichita-data-1.onrender.com/test')
             .then((response) => setMapHTML(response.data))
             .catch((error) => console.error('Error fetching map:', error));
     }, []);
