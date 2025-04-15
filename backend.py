@@ -14,7 +14,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for  '*' - all routes
-CORS(app, origins=os.getenv('FRONTEND_URL', '*'))  
+CORS(app)  
 
 
 @app.route('/map')
