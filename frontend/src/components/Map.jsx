@@ -12,7 +12,7 @@ const Map = () => {
     // }, []);
 
     useEffect(() => {
-        axios.get('https://your-backend-service-name.onrender.com/test')
+        axios.get('https://Wichita-Data-1.onrender.com/test')
             .then((response) => setMapHTML(response.data))
             .catch((error) => console.error('Error fetching map:', error));
     }, []);
