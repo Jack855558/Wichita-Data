@@ -32,4 +32,4 @@ def get_map():
     return Response(map_html, mimetype='text/html')
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
+    app.run(debug=False, host='0.0.0.0', port=10000)
