@@ -5,19 +5,19 @@ const Map = () => {
 
     const [mapHTML, setMapHTML] = useState('');
 
-    // useEffect(() => {
-    //     axios.get('https://your-backend-service-name.onrender.com/map')
-    //         .then((response) => setMapHTML(response.data))
-    //         .catch((error) => console.error('Error fetching map:', error));
-    // }, []);
-
-    console.log('Axios default base URL:', axios.defaults.baseURL);
-
     useEffect(() => {
-        axios.get('https://wichita-data-1.onrender.com/test')
+        axios.get('https://wichita-data-1.onrender.com/map')
             .then((response) => setMapHTML(response.data))
             .catch((error) => console.error('Error fetching map:', error));
     }, []);
+
+    console.log(';)');
+
+    // useEffect(() => {
+    //     axios.get('https://wichita-data-1.onrender.com/test')
+    //         .then((response) => setMapHTML(response.data))
+    //         .catch((error) => console.error('Error fetching map:', error));
+    // }, []);
 
 
 
