@@ -21,8 +21,7 @@ const Map = () => {
 
 
 
-    //return <div dangerouslySetInnerHTML={{ __html: mapHTML }} />
-    return <div>{mapHTML}</div>
+    return <div dangerouslySetInnerHTML={{ __html: mapHTML }} />
 }
 
 export default Map; 
