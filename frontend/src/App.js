@@ -1,13 +1,14 @@
 import './App.css';
 // import Background from "./components/Background";
-import Map from './components/Map';
+import FoliumMap from './components/FoliumMap.jsx';
+
 
 
 function App() {
   return (
     <div className="App">
       {/* <Background /> */}
-      <Map />
+      <FoliumMap />
     </div>
   );
 }
