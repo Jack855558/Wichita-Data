@@ -12,14 +12,11 @@ load_dotenv()
 
 
 app = Flask(__name__)
-
-# Enable CORS for  '*' - all routes
-CORS(app)  
+CORS(app)  # Allow all origins for testing
 
 @app.route('/test')
 def hello_world():
     return 'Hello, World!'
-
 
 @app.route('/map')
 def get_map(): 
