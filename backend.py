@@ -42,18 +42,8 @@ def get_map():
     # Send the HTML back
     return Response(map_html, mimetype='text/html')
 
-@app.route('/check-locations', methods=['POST', 'OPTIONS'])
+@app.route('/check-locations', methods=['POST'])
 def check_locations():
-    if request.method == 'OPTIONS':
-        # CORS preflight response
-        response = app.make_default_options_response()
-        headers = response.headers
-
-        headers['Access-Control-Allow-Origin'] = '*'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type'
-
-        return response
 
     data = request.json
     start_address = data.get('start')
