@@ -4,12 +4,6 @@ from flask_cors import CORS
 import folium
 import networkx as nx
 
-from route_utils import (
-    G, get_nearest_node,
-    get_travel_time, highway_score,
-    highway_priority_weight, balanced_route_weight
-)
-
 # from dotenv import load_dotenv
 # Load environment variables from .env file
 # load_dotenv()
