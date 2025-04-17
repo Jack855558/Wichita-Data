@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import './FoliumMap.css';
+import './TestMap.css';
 
-const FoliumMap = () => {
+const TestMap = () => {
     window.L = L;
     const [mapHTML, setMapHTML] = useState('');
     const [input1, setInput1] = useState('');
@@ -71,11 +71,25 @@ const FoliumMap = () => {
         }
     }, [mapHTML]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        console.log('Submitted values:', { input1, input2 });
-        // You can add API calls or state updates here
+        try {
+            const response = await axios.post('https://wichita-data-1.onrender.com/check-locations', {
+                start: input1,
+                end: input2
+            });
+
+            if (response.data.success) {
+                const { start, end } = response.data;
+                console.log("Start location:", start);
+                console.log("End location:", end);
+
+                // You can now use start.lat, start.lon, etc.
+            }
+        } catch (error) {
+            console.error('Error validating locations:', error);
+            alert("Failed to geocode one or both locations. Please check your input.");
+        }
     };
 
     return (
@@ -111,4 +125,4 @@ const FoliumMap = () => {
     );
 };
 
-export default FoliumMap;
+export default TestMap;
