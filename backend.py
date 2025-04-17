@@ -6,7 +6,7 @@ import networkx as nx
 import osmnx as ox
 
 from route_utils import (
-    G, get_nearest_node,
+    get_nearest_node
 )
 
 # from dotenv import load_dotenv
